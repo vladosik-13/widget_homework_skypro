@@ -1,6 +1,6 @@
-def filter_by_state(status_operation, state='EXECUTED'):
+def filter_by_state(status_operation, state="EXECUTED"):
     """Функция фильтрвции по ключу state (по умолчанию ключ = 'EXECUTED')"""
-    filtered_list = [operation for operation in status_operation if operation.get('state', 'EXECUTED') == state]
+    filtered_list = [operation for operation in status_operation if operation.get("state", "EXECUTED") == state]
     return filtered_list
 
 
