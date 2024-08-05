@@ -17,10 +17,12 @@ def filter_by_state(status_operation, state="EXECUTED"):
 
 from datetime import datetime
 
+
 def sort_list_by_date(sorted_list, reverse=True):
     """Функция сортировки словаря по дате"""
-    sorted_list.sort(key=lambda x: datetime.strptime(x['date'], "%Y-%m-%dT%H:%M:%S.%f"), reverse=reverse)
+    sorted_list.sort(key=lambda x: datetime.strptime(x["date"], "%Y-%m-%dT%H:%M:%S.%f"), reverse=reverse)
     return sorted_list
+
 
 # Пример использования
 # sorted_list = [{'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'},
