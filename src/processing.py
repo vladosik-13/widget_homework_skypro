@@ -19,7 +19,7 @@ from datetime import datetime
 
 
 def sort_list_by_date(sorted_list, reverse=True):
-    """Функция сортировки словаря по дате"""
+    """Функция сортировки словаря по дате (по умолчанию - убывание)"""
     sorted_list.sort(key=lambda x: datetime.strptime(x["date"], "%Y-%m-%dT%H:%M:%S.%f"), reverse=reverse)
     return sorted_list
 
