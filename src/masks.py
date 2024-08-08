@@ -6,6 +6,5 @@ def get_mask_card_number(x: str) -> str:
 
 def get_mask_account(x: str) -> str:
     """Функцию маскировки номера банковского счета"""
-    x = input()
-    hidden_number = "****" + x[-4:]
+    hidden_number = "**" + x[-4:]
     return hidden_number
