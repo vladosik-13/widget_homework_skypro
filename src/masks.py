@@ -1,6 +1,5 @@
 def get_mask_card_number(x: str) -> str:
     """Функцию маскировки номера банковской карты"""
-    x = ''
     hidden_number = x[:6] + "******" + x[12:]
     return hidden_number
 
