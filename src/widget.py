@@ -10,9 +10,9 @@ def mask_account_card(user_input: str) -> str:
     for i in user_input_list:
         if i.isalpha():
             name_account_parts.append(i)
-        elif i.isdigit and len(i) == 20:
+        elif i and len(i) == 20:
             account_to_mask = get_mask_account(i)
-        elif i.isdigit and len(i) == 16:
+        elif i and len(i) == 16:
             account_to_mask = get_mask_account(i)
     name_account = ''.join(name_account_parts)
     return f"{name_account} {account_to_mask}"
