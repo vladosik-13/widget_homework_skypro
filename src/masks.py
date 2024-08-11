@@ -9,4 +9,6 @@ def get_mask_card_number(x: str) -> str:
 def get_mask_account(x: str) -> str:
     """Функцию маскировки номера банковского счета"""
     hidden_number = "**" + x[-4:]
+    if len(x) != 20:
+        return 'номер счета должен состоять из 20ти цифр'
     return hidden_number

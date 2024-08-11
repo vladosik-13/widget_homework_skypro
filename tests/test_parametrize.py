@@ -1,7 +1,7 @@
 import pytest
 
 
-from src.masks import get_mask_card_number
+from src.masks import get_mask_card_number, get_mask_account
 
 
 @pytest.mark.parametrize('value, expected', [
@@ -13,3 +13,9 @@ def test_get_mask_card_number(value, expected):
     assert get_mask_card_number(value) == expected
 
 
+@pytest.mark.parametrize('value, expected', [
+    ('73654108430135874305', '**4305'),
+    ('7365410843013587430509', 'номер счета должен состоять из 20ти цифр'),
+],)
+def test_get_mask_account(value, expected):
+    assert get_mask_account(value) == expected
