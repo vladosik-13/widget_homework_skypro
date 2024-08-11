@@ -18,9 +18,6 @@ def mask_account_card(user_input: str) -> str:
     return f"{name_account} {account_to_mask}"
 
 
-
-
-
 def get_date(date_str: str) -> str:
     """Функция принимающая дату в формате "2024-03-11T02:26:18.671407" и возвращающая дату в формате "11.03.2024" """
     date_obj = datetime.strptime(date_str, "%Y-%m-%dT%H:%M:%S.%f")
