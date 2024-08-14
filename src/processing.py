@@ -1,3 +1,6 @@
+from datetime import datetime
+
+
 def filter_by_state(status_operation, state="EXECUTED"):
     """Функция фильтрвции по ключу state (по умолчанию ключ = 'EXECUTED')"""
     filtered_list = [operation for operation in status_operation if operation.get("state", "EXECUTED") == state]
@@ -15,11 +18,9 @@ def filter_by_state(status_operation, state="EXECUTED"):
 # filtered_list = filter_by_state(status_operation)
 # print(filtered_list)
 
-from datetime import datetime
-
 
 def sort_list_by_date(sorted_list, reverse=True):
-    """Функция сортировки словаря по дате"""
+    """Функция сортировки словаря по дате (по умолчанию - убывание)"""
     sorted_list.sort(key=lambda x: datetime.strptime(x["date"], "%Y-%m-%dT%H:%M:%S.%f"), reverse=reverse)
     return sorted_list
 
