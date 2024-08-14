@@ -1,4 +1,4 @@
-'''def filter_by_currency(transactions, currency):
+def filter_by_currency(transactions, currency):
     """Ф-я принимает на вход список словарей, представляющих транзакции. возвращает итератор,
     который поочередно выдает транзакции, где валюта операции соответствует заданной (например, USD)"""
     for transaction in transactions:
@@ -94,7 +94,8 @@ def transaction_descriptions(transactions):
     """функция - генератор, который принимает список словарей с транзакциями
     и возвращает описание каждой операции по очереди"""
     for transaction in transactions:
-        yield transaction['description']
+        yield transaction["description"]
+
 
 """Удали тройные кавычки чтобы проверить работу функции
 # пример использования
@@ -180,15 +181,19 @@ transactions = (
 
 descriptions = transaction_descriptions(transactions)
 for i in range(5):
-    print(next(descriptions))"""'''
+    print(next(descriptions))"""
 
 
 def card_number_generator(start, end):
+    """функция - генератор номеров карт в заданном диапозоне"""
     card_numbers = []
     for i in range(start, end + 1):
         card_number = str(i).zfill(16)
         card_numbers.append(card_number)
     return card_numbers
 
+
+"""Удали тройные кавычки чтобы проверить работу функции
+# пример использования
 for card_number in card_number_generator(1, 5):
-    print(card_number)
+    print(card_number)"""
