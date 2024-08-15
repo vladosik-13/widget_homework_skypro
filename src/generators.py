@@ -6,7 +6,7 @@ def filter_by_currency(transactions, currency):
             yield transaction
 
 
-"""Удали тройные кавычки чтобы проверить работу функции
+'''# Удали тройные кавычки чтобы проверить работу функции
 # Пример использования
 usd_transactions = filter_by_currency([
         {
@@ -86,8 +86,9 @@ usd_transactions = filter_by_currency([
         }
     ], "USD")
 for _ in range(2):
-    print(next(usd_transactions))
-"""
+    print(next(usd_transactions))'''
+
+
 
 
 def transaction_descriptions(transactions):
