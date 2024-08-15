@@ -89,8 +89,6 @@ for _ in range(2):
     print(next(usd_transactions))'''
 
 
-
-
 def transaction_descriptions(transactions):
     """функция - генератор, который принимает список словарей с транзакциями
     и возвращает описание каждой операции по очереди"""
