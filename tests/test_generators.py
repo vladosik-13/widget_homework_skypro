@@ -73,5 +73,5 @@ def test_filter_by_currency():
 
 
 def test_card_number_generator():
-    generator_2 = card_number_generator(1,2)
-    assert (next(generator_2)) == ['0000000000000001', '0000000000000002']
+    generator_2 = card_number_generator(1, 2)
+    assert (next(generator_2)) == ["0000000000000001", "0000000000000002"]
