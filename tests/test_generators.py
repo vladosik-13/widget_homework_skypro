@@ -1,7 +1,8 @@
-from src.generators import filter_by_currency
+from src.generators import filter_by_currency, card_number_generator
 
 
 def test_filter_by_currency():
+    """Функция тестирует функцию filter_by_currency"""
     geenerator = filter_by_currency(
         [
             {
@@ -69,3 +70,8 @@ def test_filter_by_currency():
         "from": "Счет 19708645243227258542",
         "to": "Счет 75651667383060284188",
     }
+
+
+def test_card_number_generator():
+    generator_2 = card_number_generator(1,2)
+    assert (next(generator_2)) == ['0000000000000001', '0000000000000002']

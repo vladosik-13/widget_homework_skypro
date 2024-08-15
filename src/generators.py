@@ -189,7 +189,7 @@ def card_number_generator(start, end):
     for i in range(start, end + 1):
         card_number = str(i).zfill(16)
         card_numbers.append(card_number)
-    return card_numbers
+    yield card_numbers
 
 
 """Удали тройные кавычки чтобы проверить работу функции
