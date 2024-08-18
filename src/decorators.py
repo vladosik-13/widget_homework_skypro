@@ -37,7 +37,9 @@ def log(filename=None):
     return decorator
 
 
-@log('')
+"""Декоратор @log выполняет функцию и возвращает результат в консоль или файл с указанным именем
+в аргументе. если None - в консоль"""
+@log('log_file.txt')
 def result(x, y):
     nums = x / y
     return nums
