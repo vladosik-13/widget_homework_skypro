@@ -1,9 +1,9 @@
 import pytest
 from src.decorators import log
-from unittest.mock import patch
 
 
-"""Тест декоратора log"""
+'''Тест декоратора log'''
+
 def test_log_decorator(tmpdir):
     log_info = tmpdir.join('test_log.txt')
 
