@@ -1,8 +1,8 @@
-import os
-from dotenv import load_dotenv
-import requests
 import json
+import os
 
+import requests
+from dotenv import load_dotenv
 
 # Загрузка переменных из .env-файла
 load_dotenv()
