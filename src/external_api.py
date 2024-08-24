@@ -52,7 +52,7 @@ def get_transaction_amount(transaction):
         convert_pay = data_dict['result']   # выдераем из возврата стороннего конвертатора итоговое значение
         return convert_pay
 
-
+"""Раскомментируйте код чтобы проверить работу функции
 test = get_transaction_amount({
     "id": 441945886,
     "state": "EXECUTED",
@@ -68,7 +68,7 @@ test = get_transaction_amount({
     "from": "Maestro 1596837868705199",
     "to": "Счет 64686473678894779589"
 })
-print(test)
+print(test)"""
 
 
 if __name__ == '__external_api__':
