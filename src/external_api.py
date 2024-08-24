@@ -1,5 +1,16 @@
+import os
+from dotenv import load_dotenv
 import requests
 import json
+
+
+# Загрузка переменных из .env-файла
+load_dotenv()
+
+# Получение значения переменной APILAYER_API_KEY из .env-файла
+API = os.getenv('APILAYER_API_KEY')
+
+
 
 def get_transaction_amount(transaction):
     """принимает на вход транзакцию и возвращает сумму транзакции (amount) в рублях, тип данных — float
@@ -13,7 +24,7 @@ def get_transaction_amount(transaction):
 
             payload = {}
             headers = {
-                "apikey": "uFbHNFlqfpRJeUW7yRneNUoUmZUQ8vXl"
+                "apikey": f"{API}"
             }
 
             response = requests.request("GET", url, headers=headers, data=payload)
@@ -21,8 +32,8 @@ def get_transaction_amount(transaction):
 
             status_code = response.status_code
             result = response.text
-            data_dict = json.loads(result)
-            convert_pay = data_dict['result']
+            data_dict = json.loads(result)       # конвертируем полученный результат из стороннего сервиса конв. валют
+            convert_pay = data_dict['result']    # выдераем из возврата стороннего конвертатора итоговое значение
             return convert_pay
     elif transaction["operationAmount"]["currency"]["code"] == "USD":
             pay = transaction["operationAmount"]["amount"]
@@ -30,7 +41,7 @@ def get_transaction_amount(transaction):
 
             payload = {}
             headers = {
-                "apikey": "uFbHNFlqfpRJeUW7yRneNUoUmZUQ8vXl"
+                "apikey": f"{API}"
             }
 
             response = requests.request("GET", url, headers=headers, data=payload)
@@ -38,13 +49,14 @@ def get_transaction_amount(transaction):
 
             status_code = response.status_code
             result = response.text
-            data_dict = json.loads(result)
-            convert_pay = data_dict['result']
+            data_dict = json.loads(result)      # конвертируем полученный результат из стороннего сервиса конв. валют
+            convert_pay = data_dict['result']   # выдераем из возврата стороннего конвертатора итоговое значение
             return convert_pay
 
-"""Раскоментируйте код для проверки функции
-test = get_transaction_amount({
-    "id": 441945886,
+"""Раскомментируй код и удали эту фразу чтобы проверить функцию
+test = get_transaction_amount(
+    {
+"id": 441945886,
     "state": "EXECUTED",
     "date": "2019-08-26T10:50:58.294041",
     "operationAmount": {
