@@ -4,6 +4,7 @@ from src.decorators import log
 
 '''Тест декоратора log'''
 
+
 def test_log_decorator(tmpdir):
     log_info = tmpdir.join('test_log.txt')
 

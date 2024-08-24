@@ -7,8 +7,8 @@ def get_transactions(file_path):
       функция возвращает пустой список."""
 
     try:
-         with open(file_path, encoding='utf-8') as f:
-           data = json.load(f)
+        with open(file_path, encoding='utf-8') as f:
+            data = json.load(f)
     except (FileNotFoundError, json.decoder.JSONDecodeError):
         return []
 
