@@ -36,7 +36,7 @@ def get_transaction_amount(transaction):
         return convert_pay
     elif transaction["operationAmount"]["currency"]["code"] == "USD":
         pay = transaction["operationAmount"]["amount"]
-        url = f'https://api.apilayer.com/exchangerates_data/convert?to=rub&from=eur&amount={pay}'
+        url = f'https://api.apilayer.com/exchangerates_data/convert?to=rub&from=usd&amount={pay}'
 
         payload = {}
         headers = {
