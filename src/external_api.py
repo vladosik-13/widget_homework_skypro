@@ -33,7 +33,7 @@ def get_transaction_amount(transaction):
         result = response.text
         data_dict = json.loads(result)       # конвертируем полученный результат из стороннего сервиса конв. валют
         convert_pay = data_dict['result']    # выдераем из возврата стороннего конвертатора итоговое значение
-        return convert_pay
+        return float(convert_pay)
     elif transaction["operationAmount"]["currency"]["code"] == "USD":
         pay = transaction["operationAmount"]["amount"]
         url = f'https://api.apilayer.com/exchangerates_data/convert?to=rub&from=usd&amount={pay}'
@@ -50,7 +50,7 @@ def get_transaction_amount(transaction):
         result = response.text
         data_dict = json.loads(result)      # конвертируем полученный результат из стороннего сервиса конв. валют
         convert_pay = data_dict['result']   # выдераем из возврата стороннего конвертатора итоговое значение
-        return convert_pay
+        return float(convert_pay)
 
 """Раскомментируйте код чтобы проверить работу функции
 test = get_transaction_amount({
