@@ -61,7 +61,7 @@ test = get_transaction_amount({
         "amount": "31957.58",
         "currency": {
             "name": "руб.",
-            "code": "RUB"
+            "code": "EUR"               # поменяй меня на USD, для конвертации в доллары
         }
     },
     "description": "Перевод организации",
