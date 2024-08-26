@@ -3,15 +3,12 @@ import logging
 
 logger = logging.getLogger('masks')    # создаем логер
 logger.setLevel(logging.DEBUG)    # уровень вывода сообщения не меньше DEBUG
-file_handler = logging.FileHandler('logs/mask_log.log')    # создаем хендлер и указываем в какой папке будет лог и имя лога
-file_formatter = logging.Formatter('%(asctime)s - %(name)s %(levelname)s: %(message)s')     # создаем и настраиваем  форматтер логера
+# создаем хендлер и указываем в какой папке будет лог и имя лога:
+file_handler = logging.FileHandler('C:/Users/user/PycharmProjects/home_work_widget/logs/mask.log')
+# создаем и настраиваем  форматтер логера:
+file_formatter = logging.Formatter('%(asctime)s - %(name)s %(levelname)s: %(message)s')
 file_handler.setFormatter(file_formatter)    # подключаем к логгеру форматтер
 logger.addHandler(file_handler)    # подключаем к логгеру хендлер
-
-
-# Основная конфигурация logging
-logging.basicConfig(filemode='w')  # Перезапись файла при каждом запуске
-
 
 
 db_logger = logging.getLogger('app.database')
@@ -26,10 +23,11 @@ def get_mask_card_number(x: str) -> str:
     try:
         return hidden_number
     except:
-        ,номер карты должен состоять из 16 цифр')
+        logger.info(f'номер карты должен состоять из 16 цифр')
         if len(x) != 16:
             return 'номер карты должен состоять из 16 цифр'
 
+get_mask_card_number('0000000000000000')
 
 
 def get_mask_account(x: str) -> str:
