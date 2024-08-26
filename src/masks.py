@@ -27,7 +27,6 @@ def get_mask_card_number(x: str) -> str:
         if len(x) != 16:
             return 'номер карты должен состоять из 16 цифр'
 
-get_mask_card_number('0000000000000000')
 
 
 def get_mask_account(x: str) -> str:
