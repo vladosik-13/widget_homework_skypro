@@ -11,6 +11,9 @@ file_handler.setFormatter(file_formatter)    # подключаем к логг�
 logger.addHandler(file_handler)    # подключаем к логгеру хендлер
 
 
+logging.basicConfig(filemode="w")
+
+
 db_logger = logging.getLogger('app.database')
 main_logger = logging.getLogger('app.main')
 
