@@ -1,4 +1,25 @@
+import logging
+
+
+logger = logging.getLogger('masks')    # создаем логер
+logger.setLevel(logging.DEBUG)    # уровень вывода сообщения не меньше DEBUG
+file_handler = logging.FileHandler('logs/mask_log.log')    # создаем хендлер и указываем в какой папке будет лог и имя лога
+file_formatter = logging.Formatter('%(asctime)s - %(name)s %(levelname)s: %(message)s')     # создаем и настраиваем  форматтер логера
+file_handler.setFormatter(file_formatter)    # подключаем к логгеру форматтер
+logger.addHandler(file_handler)    # подключаем к логгеру хендлер
+
+
+# Основная конфигурация logging
+logging.basicConfig(filemode='w')  # Перезапись файла при каждом запуске
+
+
+
+db_logger = logging.getLogger('app.database')
+main_logger = logging.getLogger('app.main')
+
+
 def get_mask_card_number(x: str) -> str:
+    logger.info(f'выполняем функцию маскировки номера банковской карты')
     """Функцию маскировки номера банковской карты"""
     hidden_number = x[:6] + "******" + x[12:]
     if len(x) != 16:
@@ -7,6 +28,7 @@ def get_mask_card_number(x: str) -> str:
 
 
 def get_mask_account(x: str) -> str:
+    logger.info(f'выполняем функцию маскировки номера банковского счета')
     """Функцию маскировки номера банковского счета"""
     hidden_number = "**" + x[-4:]
     return hidden_number
