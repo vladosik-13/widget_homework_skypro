@@ -11,10 +11,6 @@ file_handler.setFormatter(file_formatter)    # подключаем к логг�
 logger.addHandler(file_handler)    # подключаем к логгеру хендлер
 
 
-db_logger = logging.getLogger('app.database')
-main_logger = logging.getLogger('app.main')
-
-
 def get_mask_card_number(x: str) -> str:
     logger.info(f'выполняем функцию маскировки номера банковской карты')
     """Функцию маскировки номера банковской карты"""
