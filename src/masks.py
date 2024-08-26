@@ -23,7 +23,7 @@ def get_mask_card_number(x: str) -> str:
     try:
         return hidden_number
     except:
-        logger.info(f'номер карты должен состоять из 16 цифр')
+        logger.error(f'номер карты должен состоять из 16 цифр')
         if len(x) != 16:
             return 'номер карты должен состоять из 16 цифр'
 
