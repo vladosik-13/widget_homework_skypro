@@ -18,11 +18,11 @@ def get_transactions(file_path):
       функция возвращает пустой список."""
 
     try:
-        logger.info(f'выполняем функцию преобразования файла из json в python объект')
+        logger.info('выполняем функцию преобразования файла из json в python объект')
         with open(file_path, encoding='utf-8') as f:
             data = json.load(f)
     except (FileNotFoundError, json.decoder.JSONDecodeError):
-        logger.error(f'произошла ошибка')
+        logger.error('произошла ошибка')
         return []
 
     if not isinstance(data, list):
@@ -34,7 +34,5 @@ def get_transactions(file_path):
 # раскоментируй код ниже чтобы проверить функцию
 # operation = get_transactions('C:/Users/user/PycharmProjects/home_work_widget/data/operations.json')
 # print(operation)
-
-
-if __name__ == '__utils__':
-    utils()
+# if __name__ == '__utils__':
+#    utils()

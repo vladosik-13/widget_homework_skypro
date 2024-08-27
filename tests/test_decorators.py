@@ -1,6 +1,5 @@
-import pytest
-
 from src.decorators import log
+
 
 '''Тест декоратора log'''
 

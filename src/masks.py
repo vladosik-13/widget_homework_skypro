@@ -12,24 +12,17 @@ logger.addHandler(file_handler)    # подключаем к логгеру хе
 
 
 def get_mask_card_number(x: str) -> str:
-    logger.info(f'выполняем функцию маскировки номера банковской карты')
+    logger.info('выполняем функцию маскировки номера банковской карты')
     """Функцию маскировки номера банковской карты"""
     hidden_number = x[:6] + "******" + x[12:]
-
-    try:
-        return hidden_number
-    except:
-        logger.error(f'номер карты должен состоять из 16 цифр')
-        if len(x) != 16:
-            return 'номер карты должен состоять из 16 цифр'
+    return hidden_number
+    logger.error('номер карты должен состоять из 16 цифр')
+    if len(x) != 16:
+        return 'номер карты должен состоять из 16 цифр'
 
 
 def get_mask_account(x: str) -> str:
-    logger.info(f'выполняем функцию маскировки номера банковского счета')
+    logger.info('выполняем функцию маскировки номера банковского счета')
     """Функцию маскировки номера банковского счета"""
     hidden_number = "**" + x[-4:]
-    try:
-        return hidden_number
-    except:
-        logger.error(f'произошла ошибка ввода')
-        return []
+    return hidden_number
