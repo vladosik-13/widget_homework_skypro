@@ -52,7 +52,8 @@ def get_transaction_amount(transaction):
         convert_pay = data_dict['result']   # выдераем из возврата стороннего конвертатора итоговое значение
         return float(convert_pay)
 
-"""Раскомментируйте код чтобы проверить работу функции
+
+""" Раскомментируйте код чтобы проверить работу функции
 test = get_transaction_amount({
     "id": 441945886,
     "state": "EXECUTED",
@@ -61,15 +62,15 @@ test = get_transaction_amount({
         "amount": "31957.58",
         "currency": {
             "name": "руб.",
-            "code": "EUR"               # поменяй меня на USD, для конвертации в доллары
+            "code": "EUR"
         }
     },
     "description": "Перевод организации",
     "from": "Maestro 1596837868705199",
     "to": "Счет 64686473678894779589"
 })
+
 print(test)"""
 
-
-if __name__ == '__external_api__':
-    external_api()
+# if __name__ == '__external_api__':
+#   external_api()
