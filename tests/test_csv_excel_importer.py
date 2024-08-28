@@ -1,6 +1,7 @@
 import unittest
-from unittest.mock import patch, MagicMock, mock_open
-from src.csv_excel_importer import excel_import, csv_import
+from unittest.mock import MagicMock, mock_open, patch
+
+from src.csv_excel_importer import csv_import, excel_import
 
 
 class TestExcelImport(unittest.TestCase):
