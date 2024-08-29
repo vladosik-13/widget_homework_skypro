@@ -1,5 +1,4 @@
 import csv
-
 import pandas as pd
 
 
@@ -27,13 +26,6 @@ def excel_import(path_file):
      служат названия столбцов"""
     try:
         excel_data = pd.read_excel(path_file)
-        # раскоментируй код нижк чтобы вывести данне о кол-ве строк и столбцов
-        # print(excel_data.shape)
-
-        # раскоментируй код нижк чтобы вывести пример данных таблицы
-        # print(excel_data.head())
-
-        # Преобразовывает каждую строку DataFrame в словарь, в котором ключами служат названия столбцов.
         transactions = excel_data.to_dict(orient='records')
         return transactions
     except Exception as e:
