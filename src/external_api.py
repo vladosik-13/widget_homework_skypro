@@ -46,7 +46,7 @@ def get_transaction_amount(transaction):
         response = requests.request("GET", url, headers=headers, data=payload)
         pay = transaction["operationAmount"]["amount"]
 
-        status_code = response.status_code
+#        status_code = response.status_code
         result = response.text
         data_dict = json.loads(result)      # конвертируем полученный результат из стороннего сервиса конв. валют
         convert_pay = data_dict['result']   # выдераем из возврата стороннего конвертатора итоговое значение

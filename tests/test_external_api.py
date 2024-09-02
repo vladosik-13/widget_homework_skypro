@@ -1,6 +1,7 @@
-import unittest
-from unittest.mock import patch, Mock
 import json
+import unittest
+from unittest.mock import Mock, patch
+
 from src.external_api import get_transaction_amount
 
 

@@ -1,6 +1,5 @@
 import logging
 
-
 logger = logging.getLogger('masks')    # создаем логер
 logger.setLevel(logging.DEBUG)    # уровень вывода сообщения не меньше DEBUG
 # создаем хендлер и указываем в какой папке будет лог и имя лога:
