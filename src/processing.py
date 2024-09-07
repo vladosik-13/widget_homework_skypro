@@ -1,10 +1,10 @@
 from datetime import datetime
 
 
-def filter_by_state(status_operation, state="EXECUTED"):
+def filter_by_state(transactions, state="EXECUTED"):
     """Функция фильтрвции по ключу state (по умолчанию ключ = 'EXECUTED')"""
-    filtered_list = [operation for operation in status_operation if operation.get("state", "EXECUTED") == state]
-    return filtered_list
+    filtered_transactions = [transaction for transaction in transactions if transaction['state'] == state]
+    return filtered_transactions
 
 
 # раскомментируйте код ниже для проверки функции
