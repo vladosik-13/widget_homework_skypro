@@ -1,3 +1,6 @@
+import re
+
+
 def filter_by_currency(transactions, currency):
     """Ф-я принимает на вход список словарей, представляющих транзакции. возвращает итератор,
     который поочередно выдает транзакции, где валюта операции соответствует заданной (например, USD)"""
@@ -196,3 +199,17 @@ def card_number_generator(start, end):
 # пример использования
 for card_number in card_number_generator(1, 5):
     print(card_number)"""
+
+
+def get_search(transactions, search_str: str) -> list[dict]:
+    """Функция для поиска по транзакциям. Принимает список словарей с транзакциями и строку для поиска.
+    Возвращает список словарей, в которых есть данная строка
+"""
+    transactions_by_search = []
+
+    for transaction in transactions:
+        if type(transaction) is not None:
+            if transaction.get("description") is not None:
+                if re.search(search_str, str(transaction.get("description")), flags=re.IGNORECASE):
+                    transactions_by_search.append(transaction)
+    return transactions_by_search

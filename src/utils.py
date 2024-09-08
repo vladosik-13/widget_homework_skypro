@@ -31,7 +31,7 @@ def get_transactions(file_path):
 
 
 # раскоментируй код ниже чтобы проверить функцию
-# operation = get_transactions('C:/Users/user/PycharmProjects/home_work_widget/data/operations.json')
-# print(operation)
-# if __name__ == '__utils__':
-#    utils()
+'''operation = get_transactions('C:/Users/user/PycharmProjects/home_work_widget/data/operations.json')
+print(operation)
+if __name__ == '__utils__':
+    utils()'''
